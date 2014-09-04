@@ -11,6 +11,7 @@ namespace GuessThatNumber
         static void Main(string[] args)
         {
             NumberGame();
+            Console.ReadKey();
         }
         static void NumberGame()
         {
@@ -20,6 +21,7 @@ namespace GuessThatNumber
             //random number generator
             Random game = new Random();
             int answer = game.Next(1, 101);
+            //instructions
             Console.WriteLine("Please guess a number between 1 and 100.");
             bool winner = false;
            
@@ -36,12 +38,12 @@ namespace GuessThatNumber
                     Console.WriteLine("Congratulations, you must be a lucky guesser!");
                     counter++;
                 }
-                else if (answer < guess)
+                else if (answer > guess)
                 {
                     Console.WriteLine("You're to low, guess higher!");
                     counter++;
                 }
-                else if (answer > guess)
+                else if (answer < guess)
                 {
                     Console.WriteLine("Oh no! You're to high, come down a bit.");
                     counter++;
